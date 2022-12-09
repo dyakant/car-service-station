@@ -3,7 +3,7 @@ package com.gitant.sfdservicestation.model;
 /**
  * Created by Anton Dyakov on 08.12.2022
  */
-public class Person {
+public class Person extends BaseEntity {
     private String firstName;
     private String lastName;
 
