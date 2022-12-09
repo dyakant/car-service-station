@@ -3,7 +3,7 @@
 
     <groupId>com.gitant</groupId>
     <artifactId>car-service-station</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
 
     <modules>
         <module>service-station-data</module>
@@ -27,7 +27,7 @@
 
     <scm>
         <developerConnection>scm:git:git@github.com:dyakant/sfd-service-station.git</developerConnection>
-      <tag>car-service-station-0.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <build>
