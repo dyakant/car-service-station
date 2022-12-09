@@ -4,7 +4,7 @@
     <parent>
         <artifactId>car-service-station</artifactId>
         <groupId>com.gitant</groupId>
-        <version>0.0.2-SNAPSHOT</version>
+        <version>0.0.2</version>
     </parent>
 
     <artifactId>service-station-data</artifactId>
