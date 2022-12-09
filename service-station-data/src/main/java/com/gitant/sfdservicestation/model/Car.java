@@ -5,7 +5,7 @@ import java.time.LocalDate;
 /**
  * Created by Anton Dyakov on 08.12.2022
  */
-public class Car {
+public class Car extends BaseEntity {
     private CarType carType;
     private Owner owner;
     private LocalDate createDate;
