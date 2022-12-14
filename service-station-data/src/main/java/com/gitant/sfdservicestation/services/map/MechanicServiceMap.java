@@ -30,7 +30,7 @@ public class MechanicServiceMap
 
     @Override
     public Mechanic save(Mechanic object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override
