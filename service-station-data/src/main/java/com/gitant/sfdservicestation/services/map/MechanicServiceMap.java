@@ -1,7 +1,7 @@
 package com.gitant.sfdservicestation.services.map;
 
 import com.gitant.sfdservicestation.model.Mechanic;
-import com.gitant.sfdservicestation.services.CrudService;
+import com.gitant.sfdservicestation.services.MechanicService;
 
 import java.util.Set;
 
@@ -10,7 +10,7 @@ import java.util.Set;
  */
 public class MechanicServiceMap
         extends AbstractMapService<Mechanic, Long>
-        implements CrudService<Mechanic, Long> {
+        implements MechanicService {
     @Override
     public Set<Mechanic> findAll() {
         return super.findAll();
@@ -34,5 +34,10 @@ public class MechanicServiceMap
     @Override
     public Mechanic findById(Long id) {
         return super.findById(id);
+    }
+
+    @Override
+    public Mechanic findByLastName(String lastName) {
+        return null;
     }
 }

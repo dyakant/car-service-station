@@ -1,7 +1,7 @@
 package com.gitant.sfdservicestation.services.map;
 
 import com.gitant.sfdservicestation.model.Car;
-import com.gitant.sfdservicestation.services.CrudService;
+import com.gitant.sfdservicestation.services.CarService;
 
 import java.util.Set;
 
@@ -10,7 +10,7 @@ import java.util.Set;
  */
 public class CarServiceMap
         extends AbstractMapService<Car, Long>
-        implements CrudService<Car, Long> {
+        implements CarService {
     @Override
     public Set<Car> findAll() {
         return super.findAll();
