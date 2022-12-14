@@ -4,8 +4,6 @@ import com.gitant.sfdservicestation.model.Mechanic;
 import com.gitant.sfdservicestation.model.Owner;
 import com.gitant.sfdservicestation.services.MechanicService;
 import com.gitant.sfdservicestation.services.OwnerService;
-import com.gitant.sfdservicestation.services.map.MechanicServiceMap;
-import com.gitant.sfdservicestation.services.map.OwnerServiceMap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,9 +15,9 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final MechanicService mechanicService;
 
-    public DataLoader() {
-        this.ownerService = new OwnerServiceMap();
-        this.mechanicService = new MechanicServiceMap();
+    public DataLoader(OwnerService ownerService, MechanicService mechanicService) {
+        this.ownerService = ownerService;
+        this.mechanicService = mechanicService;
     }
 
     @Override

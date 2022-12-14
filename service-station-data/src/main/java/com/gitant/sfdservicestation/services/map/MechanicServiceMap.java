@@ -2,12 +2,14 @@ package com.gitant.sfdservicestation.services.map;
 
 import com.gitant.sfdservicestation.model.Mechanic;
 import com.gitant.sfdservicestation.services.MechanicService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 /**
  * Created by Anton Dyakov on 12.12.2022
  */
+@Service
 public class MechanicServiceMap
         extends AbstractMapService<Mechanic, Long>
         implements MechanicService {

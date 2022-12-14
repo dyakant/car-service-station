@@ -2,12 +2,14 @@ package com.gitant.sfdservicestation.services.map;
 
 import com.gitant.sfdservicestation.model.Owner;
 import com.gitant.sfdservicestation.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 /**
  * Created by Anton Dyakov on 12.12.2022
  */
+@Service
 public class OwnerServiceMap
         extends AbstractMapService<Owner, Long>
         implements OwnerService {
