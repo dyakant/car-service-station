@@ -6,6 +6,10 @@ package com.gitant.sfdservicestation.model;
 public class CarType extends BaseEntity {
     private String name;
 
+    public CarType(String name) {
+        this.name = name;
+    }
+
     public String getName() {
         return name;
     }
