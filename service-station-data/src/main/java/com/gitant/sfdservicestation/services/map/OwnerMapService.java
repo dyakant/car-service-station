@@ -13,14 +13,14 @@ import java.util.Set;
  * Created by Anton Dyakov on 12.12.2022
  */
 @Service
-public class OwnerServiceMap
+public class OwnerMapService
         extends AbstractMapService<Owner, Long>
         implements OwnerService {
 
     private final CarTypeService carTypeService;
     private final CarService carService;
 
-    public OwnerServiceMap(CarTypeService carTypeService, CarService carService) {
+    public OwnerMapService(CarTypeService carTypeService, CarService carService) {
         this.carTypeService = carTypeService;
         this.carService = carService;
     }

@@ -10,7 +10,7 @@ import java.util.Set;
  * Created by Anton Dyakov on 12.12.2022
  */
 @Service
-public class CarServiceMap
+public class CarMapService
         extends AbstractMapService<Car, Long>
         implements CarService {
     @Override
