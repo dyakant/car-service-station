@@ -1,4 +1,4 @@
-package com.gitant.sfdservicestation.conrollers;
+package com.gitant.sfdservicestation.controllers;
 
 import com.gitant.sfdservicestation.services.OwnerService;
 import org.springframework.stereotype.Controller;
