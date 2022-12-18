@@ -90,7 +90,7 @@ body {
     font-weight: var(--bs-body-font-weight);
     line-height: var(--bs-body-line-height);
     color: var(--bs-body-color);
-    text-align: var(--bs-body-text-align);
+    text-align: var(--bs-body-text-align); /*TODO: fix*/
     background-color: var(--bs-body-bg);
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -4314,7 +4314,7 @@ textarea.form-control-lg {
 }
 
 .navbar-nav-scroll {
-    max-height: var(--bs-scroll-height, 75vh);
+    max-height: var(--bs-scroll-height, 75vh); /* TODO: fix*/
     overflow-y: auto;
 }
 
@@ -5103,7 +5103,7 @@ textarea.form-control-lg {
     float: left;
     padding-right: 0.5rem;
     color: #6c757d;
-    content: var(--bs-breadcrumb-divider, "/") /* rtl: var(--bs-breadcrumb-divider, "/") */;
+    content: var(--bs-breadcrumb-divider, "/") /*TODO: fix*/ /* rtl: var(--bs-breadcrumb-divider, "/") */;
 }
 
 .breadcrumb-item.active {
