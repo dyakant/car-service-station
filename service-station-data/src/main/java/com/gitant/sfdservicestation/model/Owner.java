@@ -1,5 +1,6 @@
 package com.gitant.sfdservicestation.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -10,11 +11,14 @@ public class Owner extends Person {
     private String address;
     private String city;
     private String telephone;
-    private Set<Car> cars;
+    private Set<Car> cars = new HashSet<>();
 
-    public Owner(String name, String surname) {
+    public Owner(String name, String surname, String address, String city, String telephone) {
         this.setFirstName(name);
         this.setLastName(surname);
+        this.setAddress(address);
+        this.setCity(city);
+        this.setTelephone(telephone);
     }
 
     public String getAddress() {

@@ -1,6 +1,9 @@
 package com.gitant.sfdservicestation.services.map;
 
+import com.gitant.sfdservicestation.model.Car;
 import com.gitant.sfdservicestation.model.Owner;
+import com.gitant.sfdservicestation.services.CarService;
+import com.gitant.sfdservicestation.services.CarTypeService;
 import com.gitant.sfdservicestation.services.OwnerService;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +16,14 @@ import java.util.Set;
 public class OwnerServiceMap
         extends AbstractMapService<Owner, Long>
         implements OwnerService {
+
+    private final CarTypeService carTypeService;
+    private final CarService carService;
+
+    public OwnerServiceMap(CarTypeService carTypeService, CarService carService) {
+        this.carTypeService = carTypeService;
+        this.carService = carService;
+    }
 
     @Override
     public Set<Owner> findAll() {
@@ -31,7 +42,29 @@ public class OwnerServiceMap
 
     @Override
     public Owner save(Owner object) {
-        return super.save(object);
+        if (object != null) {
+            if (object.getCars() != null) {
+                object.getCars().forEach(car -> {
+                    if (car.getCarType() != null) {
+                        if (car.getCarType().getId() == null) {
+                            car.setCarType(carTypeService.save(car.getCarType()));
+                        }
+                    } else {
+                        throw new RuntimeException("Car Type is required");
+                    }
+
+                    if (car.getId() == null) {
+                        Car savedCar = carService.save(car);
+                        car.setId(savedCar.getId());
+                    }
+                });
+            }
+
+            return super.save(object);
+
+        } else {
+            return null;
+        }
     }
 
     @Override

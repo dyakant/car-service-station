@@ -1,12 +1,13 @@
 package com.gitant.sfdservicestation.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
  * Created by Anton Dyakov on 08.12.2022
  */
 public class Mechanic extends Person {
-    private Set<Speciality> specialities;
+    private Set<Speciality> specialities = new HashSet<>();
 
     public Mechanic(String name, String surname) {
         this.setFirstName(name);
