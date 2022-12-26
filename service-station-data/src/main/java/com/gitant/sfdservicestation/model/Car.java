@@ -1,15 +1,29 @@
 package com.gitant.sfdservicestation.model;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
 /**
  * Created by Anton Dyakov on 08.12.2022
  */
+@Entity
+@Table(name = "cars")
 public class Car extends BaseEntity {
+    @ManyToOne
+    @JoinColumn(name = "type_id")
     private CarType carType;
+    @Column(name = "car_type")
     private String number;
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
     private Owner owner;
+    @Column(name = "create_date")
     private LocalDate createDate;
+
+    public Car() {
+
+    }
 
     public Car(CarType carType, String number, Owner owner, LocalDate date) {
         this.carType = carType;
