@@ -22,7 +22,7 @@ public class Car extends BaseEntity {
     private Owner owner;
     @Column(name = "create_date")
     private LocalDate createDate;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "car")
     private Set<Visit> visits = new HashSet<>();
 
     public Car() {
