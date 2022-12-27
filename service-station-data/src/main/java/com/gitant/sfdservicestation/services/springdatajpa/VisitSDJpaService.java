@@ -13,7 +13,7 @@ import java.util.Set;
  * Created by Anton Dyakov on 27.12.2022
  */
 @Service
-@Profile("sprinfdatajpa")
+@Profile("springdatajpa")
 public class VisitSDJpaService implements VisitService {
     private final VisitRepository visitRepository;
 

@@ -2,6 +2,7 @@ package com.gitant.sfdservicestation.services.map;
 
 import com.gitant.sfdservicestation.model.CarType;
 import com.gitant.sfdservicestation.services.CarTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -10,6 +11,7 @@ import java.util.Set;
  * Created by Anton Dyakov on 18.12.2022
  */
 @Service
+@Profile({"default", "map"})
 public class CarTypeMapService
         extends AbstractMapService<CarType, Long>
         implements CarTypeService {

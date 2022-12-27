@@ -5,6 +5,7 @@ import com.gitant.sfdservicestation.model.Owner;
 import com.gitant.sfdservicestation.services.CarService;
 import com.gitant.sfdservicestation.services.CarTypeService;
 import com.gitant.sfdservicestation.services.OwnerService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -13,6 +14,7 @@ import java.util.Set;
  * Created by Anton Dyakov on 12.12.2022
  */
 @Service
+@Profile({"default", "map"})
 public class OwnerMapService
         extends AbstractMapService<Owner, Long>
         implements OwnerService {

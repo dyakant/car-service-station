@@ -3,6 +3,7 @@ package com.gitant.sfdservicestation.services.map;
 import com.gitant.sfdservicestation.model.Mechanic;
 import com.gitant.sfdservicestation.services.MechanicService;
 import com.gitant.sfdservicestation.services.SpecialityService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -11,6 +12,7 @@ import java.util.Set;
  * Created by Anton Dyakov on 12.12.2022
  */
 @Service
+@Profile({"default", "map"})
 public class MechanicMapService
         extends AbstractMapService<Mechanic, Long>
         implements MechanicService {
