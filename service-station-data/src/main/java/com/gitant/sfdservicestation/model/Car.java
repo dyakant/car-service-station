@@ -3,6 +3,8 @@ package com.gitant.sfdservicestation.model;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by Anton Dyakov on 08.12.2022
@@ -20,6 +22,8 @@ public class Car extends BaseEntity {
     private Owner owner;
     @Column(name = "create_date")
     private LocalDate createDate;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
+    private Set<Visit> visits = new HashSet<>();
 
     public Car() {
 
@@ -62,5 +66,13 @@ public class Car extends BaseEntity {
 
     public void setCreateDate(LocalDate createDate) {
         this.createDate = createDate;
+    }
+
+    public Set<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
     }
 }
