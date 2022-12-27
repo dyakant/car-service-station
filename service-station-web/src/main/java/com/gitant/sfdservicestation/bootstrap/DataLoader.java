@@ -54,6 +54,9 @@ public class DataLoader implements CommandLineRunner {
         var savedAutoBody = specialityService.save(autoBody);
         System.out.println("Specialities loaded");
 
+//        Owner owner1 = Owner.builder().address("51 Begalina").city("Almaty").telephone("+7954879213213").build();
+//        owner1.setFirstName("Anton");
+//        owner1.setLastName("Dyakov");
         Owner owner1 = new Owner("Anton", "Dyakov", "51 Begalina", "Almaty", "+7954879213213");
         Car car1 = new Car(savedBmw, "X238TH178", owner1, LocalDate.of(2020, 10, 12));
         owner1.getCars().add(car1);
