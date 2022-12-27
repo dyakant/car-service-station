@@ -2,12 +2,14 @@ package com.gitant.sfdservicestation.services.map;
 
 import com.gitant.sfdservicestation.model.Visit;
 import com.gitant.sfdservicestation.services.VisitService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 /**
  * Created by Anton Dyakov on 27.12.2022
  */
+@Service
 public class VisitMapService
         extends AbstractMapService<Visit, Long>
         implements VisitService {

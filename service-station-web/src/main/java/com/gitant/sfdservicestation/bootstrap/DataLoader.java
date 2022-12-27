@@ -1,10 +1,7 @@
 package com.gitant.sfdservicestation.bootstrap;
 
 import com.gitant.sfdservicestation.model.*;
-import com.gitant.sfdservicestation.services.CarTypeService;
-import com.gitant.sfdservicestation.services.MechanicService;
-import com.gitant.sfdservicestation.services.OwnerService;
-import com.gitant.sfdservicestation.services.SpecialityService;
+import com.gitant.sfdservicestation.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -19,17 +16,19 @@ public class DataLoader implements CommandLineRunner {
     private final MechanicService mechanicService;
     private final CarTypeService carTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
     public DataLoader(
             OwnerService ownerService,
             MechanicService mechanicService,
             CarTypeService carTypeService,
-            SpecialityService specialityService
-    ) {
+            SpecialityService specialityService,
+            VisitService visitService) {
         this.ownerService = ownerService;
         this.mechanicService = mechanicService;
         this.carTypeService = carTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -64,6 +63,13 @@ public class DataLoader implements CommandLineRunner {
         owner2.getCars().add(car2);
         ownerService.save(owner2);
         System.out.println("Owners loaded.");
+
+        var visit1 = new Visit();
+        visit1.setCar(car1);
+        visit1.setDate(LocalDate.now());
+        visit1.setDescription("noise in the engine");
+        visitService.save(visit1);
+        System.out.println("Visits loaded.");
 
         var mechanic1 = new Mechanic("Petrov", "Michalich");
         mechanic1.getSpecialities().add(savedAutoBody);
